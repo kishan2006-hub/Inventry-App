@@ -44,8 +44,12 @@ server.get("/logout",ProductControlle.logout)
 
 server.use(express.static("src/view"))
 
-server.listen(3400,()=>{
-    console.log("Server run at 3400")
-})
+const port = process.env.PORT || 3400;
+
+server.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
+
 
 
